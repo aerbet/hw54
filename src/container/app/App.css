@@ -1,42 +1,65 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
   text-align: center;
+  display: grid;
+  justify-items: center;
+  margin-top: 50px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.square_div {
+  border: 1px solid lightslategrey;
+  display: grid;
+  grid-template-columns: repeat(6, 35px);
+  grid-template-rows: repeat(6, 35px);
+  grid-gap: 5px 5px;
+  padding: 5px;
+  width: fit-content;
+  border-radius: 5px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.small_div,
+.toggle_div{
+  border: 1px solid #8000ff;
+  justify-self: center;
+  width: 35px;
+  height: 35px;
+  background: #358b00;
+  border-radius: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+.toggle_div {
+  background: transparent;
 }
 
-.card {
-  padding: 2em;
+.hide {
+  color: transparent;
 }
 
-.read-the-docs {
-  color: #888;
+.show {
+  color: red;
+  font-weight: 900;
+}
+
+.part1 {
+  color: gold;
+  height: 75px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.tries ,
+.reset_button,
+.score,
+.total_score {
+  padding: 5px;
+}
+
+.score {
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.score,
+.total_score {
+  background: dodgerblue;
 }
