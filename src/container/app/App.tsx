@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import './App.css';
 import SmallSquare from "../../components/SmallSquare/SmallSquare";
 import Tries from "../../components/Tries/Tries";
@@ -7,7 +7,12 @@ import Notification from "../../components/Notification/Notification";
 import Score from "../../components/Score/Score";
 
 const App = () => {
-  const [smallSquare, setSmallSquare] = useState<{ id: number; squareClass: string; prize: string; hideClass: string; }[]>([]);
+  const [smallSquare, setSmallSquare] = useState<{
+    id: number;
+    squareClass: string;
+    prize: string;
+    hideClass: string;
+  }[]>([]);
   const [tries, setTries] = useState(0);
   const [hiddenId, setHiddenId] = useState(0);
   const [active, setActive] = useState(true);
@@ -25,7 +30,7 @@ const App = () => {
   const createSquares = () => {
     let squares = [];
     for (let i = 0; i < 36; i++) {
-      squares.push({ id: i, squareClass: 'small_div', prize: '', hideClass: '' });
+      squares.push({id: i, squareClass: 'small_div', prize: '', hideClass: ''});
     }
     const rand = Math.round(Math.random() * 36);
     squares[rand].hideClass = 'hide';
@@ -43,7 +48,7 @@ const App = () => {
     setScore(36);
   }
 
-  const changeClass = (event) => {
+  const changeClass = (event: React.MouseEvent<HTMLDivElement>) => {
     const id = parseInt(event.currentTarget.id, 10);
     let squaresCopy = [...smallSquare];
     squaresCopy[id].squareClass = 'toggle_div';
